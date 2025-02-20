@@ -23,20 +23,20 @@ jobs:
           node-version: '20.x'
  
       - name: 'Install and Build jarvis-common'
-      run: |
-        yarn install
-        yarn build
-        yarn pack
-        mv jarvis-common-v1.0.0.tgz ../jarvis-functions
-      working-directory: jarvis-common
+        run: |
+          yarn install
+          yarn build
+          yarn pack
+          mv jarvis-common-v1.0.0.tgz ../jarvis-functions
+        working-directory: jarvis-common
 
       - name: 'Install and Build jarvis-functions'
-      run: |
-        yarn add file:jarvis-common-v1.0.0.tgz --force
-        rm ./jarvis-common-v1.0.0.tgz
-        yarn install
-        yarn build  
-      working-directory: jarvis-functions
+        run: |
+          yarn add file:jarvis-common-v1.0.0.tgz --force
+          rm ./jarvis-common-v1.0.0.tgz
+          yarn install
+          yarn build  
+        working-directory: jarvis-functions
  
       #- name: Debug - List files in deployment directory
       #  run: ls -lR ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
