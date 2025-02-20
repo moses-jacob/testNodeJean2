@@ -27,7 +27,7 @@ jobs:
           yarn add file:jarvis-common-v1.0.0.tgz --force
           yarn install
           yarn build  
-        working-directory: testNodeJean2
+        working-directory: ./testNodeJean2
  
       #- name: Debug - List files in deployment directory
       #  run: ls -lR ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
